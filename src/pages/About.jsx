@@ -2,13 +2,13 @@ import { FaCheckCircle, FaExternalLinkAlt } from "react-icons/fa";
 
 function About() {
   return (
-    <div className="bg-stone-100 max-w-4xl mx-auto py-5 px-6 text-gray-800 grid gap-8">
-      <h1 className="text-l uppercase font-bold text-center text-gray-900">
+    <div className="bg-stone-100 max-w-4xl font-serif tracking-wide mx-auto py-5 px-6 text-gray-800 grid gap-8">
+      <h1 className="text-lg uppercase font-bold text-center text-gray-900">
         About <span className="text-primary">Rate-It</span>
       </h1>
 
       <div className="bg-white p-6 rounded-lg shadow-md">
-        <p className="text-lg font-semibold mb-4 underline underline-offset-2
+        <p className="text-lg font-semibold font-serif mb-4 underline underline-offset-2
         lg:text-center
          ">
           Bringing Expert Reviews to Beauty Enthusiasts
@@ -67,12 +67,12 @@ function About() {
 
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-lg lg:text-center font-semibold text-gray-900 mb-4 underline underline-offset-2">Explore the Project</h2>
-        <p className="mb-4 text-sm lg:text-center">View the full source code on GitHub:</p>
+        <p className="mb-4 text-sm lg:text-center ">View the full source code on GitHub:</p>
         <a
           href="https://github.com/Angelapeters1601"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary text-sm italic font-semibold flex items-center gap-2 lg:justify-center hover:underline"
+          className="text-blue-600 text-sm italic font-semibold flex items-center gap-2 lg:justify-center hover:underline"
         >
           View the Repository <FaExternalLinkAlt />
         </a>

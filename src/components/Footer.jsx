@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaUser, FaShieldAlt, FaP
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8 mt-10">
+    <footer className="bg-black text-white py-8 mt-10 font-mono">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         <h1 className="uppercase text-lg font-bold py-3 px-4 text-primary">Rate-It</h1>
        

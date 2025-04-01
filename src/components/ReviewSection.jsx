@@ -5,7 +5,6 @@ import makeupData from "../mockApi/makeupData";
 import fragranceData from "../mockApi/fragranceData";
 
 function ReviewSection() {
-    // Define categories and their corresponding data
     const categories = [
         { title: "Skincare", data: skincareData },
         { title: "Haircare", data: haircareData },
@@ -16,10 +15,11 @@ function ReviewSection() {
     return (
         <div>
             <div>
-                <h3 className="font-bold text-3xl text-center text-stone-800 bg-gray-100 py-5 w-100 mx-auto">
+                <h3 className="font-bold font-mono text-3xl text-center text-stone-800 bg-gray-100 py-5 w-100 mx-auto">
                     Reviews from Experts
                 </h3>
-                <p className="py-5 text-stone-700 font-semibold leading-loose">
+                <p className=" font-serif py-5
+                 text-stone-700 font-light leading-loose">
                     The editor reviews offer a deep dive into the product, providing thoughtful insights on its features, performance, and overall value. They give readers a well-rounded perspective by discussing both the strengths and potential drawbacks, helping consumers make more confident and informed decisions before making a purchase. These reviews often reflect real-world usage and are written with the intent to guide shoppers toward the best choices based on their individual needs.
                 </p>
             </div>
