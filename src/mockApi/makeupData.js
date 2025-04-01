@@ -1,0 +1,85 @@
+  // src/data/makeupData.js
+const makeupData = [
+    {
+      id: 1,
+      category: "makeup",
+      name: "24H Color Stay Nail Polish",
+      editorRating: 4.5,
+      editorReview: "Lasted a full 7 days without chipping in our wear tests - unprecedented for a drugstore formula.",
+      editorName: "Lisa Rodriguez",
+      editorTitle: "Celebrity Manicurist",
+      price: 9.99,
+      image: "/images/products/nail-polish.jpg",
+      description: "Long-wearing nail polish with patented color-lock technology and gel-like shine.",
+      pros: ["80+ color options", "Dries in 5 minutes", "Chip-resistant"],
+      cons: ["Requires 2 coats", "Strong chemical smell"],
+      ratingRank: 3,
+      limitedEdition: true
+    },
+    {
+      id: 2,
+      category: "makeup",
+      name: "Volumizing Mascara",
+      editorRating: 4.6,
+      editorReview: "Added 2mm of length and 40% more volume in clinical measurements without clumping.",
+      editorName: "Mia Johnson",
+      editorTitle: "Makeup Artist",
+      price: 24.99,
+      image: "/images/products/mascara.jpg",
+      description: "Clump-free mascara with tapered brush for separated, fanned-out lashes that last all day.",
+      pros: ["Smudge-proof", "Buildable formula", "Easy removal"],
+      cons: ["Wand could be longer", "Needs reapplication after 8h"],
+      ratingRank: 4,
+      bestFor: ["Volume", "Length"]
+    },
+    {
+      id: 3,
+      category: "makeup",
+      name: "Hydrating Foundation",
+      editorRating: 4.8,
+      editorReview: "This foundation provides 12-hour hydration and a flawless finish, even for dry skin.",
+      editorName: "Clara Lee",
+      editorTitle: "Makeup Expert",
+      price: 39.00,
+      image: "/images/products/foundation.jpg",
+      description: "Long-lasting foundation with moisturizing ingredients and medium to full coverage.",
+      pros: ["Hydrating", "Medium coverage", "Non-comedogenic"],
+      cons: ["Can get oily", "Not available in many shades"],
+      ratingRank: 2,
+      bestFor: ["Dry Skin", "Hydration"]
+    },
+    {
+        id: 4,
+        category: "makeup",
+        name: "Silk Matte Lipstick",
+        editorRating: 4.7,
+        editorReview: "A creamy, satin-like lipstick that glides on smoothly and lasts up to 8 hours without fading.",
+        editorName: "Jasmine Bell",
+        editorTitle: "Celebrity Makeup Artist",
+        price: 22.00,
+        image: "/images/products/lipstick.jpg",
+        description: "Satin-finish lipstick with rich color payoff in an array of shades.",
+        pros: ["Long-wearing", "Moisturizing", "Non-drying"],
+        cons: ["Requires reapplication after meals"],
+        ratingRank: 1,
+        limitedEdition: false
+      },
+      {
+        id: 5,
+        category: "makeup",
+        name: "Matte Setting Spray",
+        editorRating: 4.6,
+        editorReview: "A lightweight spray that locks makeup in place all day while controlling shine.",
+        editorName: "Tasha Evans",
+        editorTitle: "Makeup Artist",
+        price: 18.50,
+        image: "/images/products/setting-spray.jpg",
+        description: "Oil-free setting spray to help makeup stay fresh for up to 16 hours.",
+        pros: ["Oil control", "Long-lasting", "Lightweight"],
+        cons: ["Can feel drying for dry skin", "Strong scent"],
+        ratingRank: 5,
+        bestFor: ["Oil Control"]
+      }
+  ];
+  export default makeupData;
+  
