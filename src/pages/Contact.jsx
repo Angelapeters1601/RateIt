@@ -36,7 +36,7 @@ function ContactUs (){
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 border border-gray-200 rounded-lg shadow-sm my-10">
+    <div className="max-w-3xl mx-auto font-serif tracking-wide p-6 border border-gray-200 rounded-lg shadow-sm my-10">
       <h1 className="text-l uppercase font-bold text-center text-gray-900 mb-6">Contact Us</h1>
       <p className="text-center text-sm text-gray-600 mb-6">
         Have any questions or feedback? Feel free to reach out to us using the details below or send us a message through the contact form.

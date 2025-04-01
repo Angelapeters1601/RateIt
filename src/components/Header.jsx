@@ -7,7 +7,7 @@ function Header() {
     <div className="px-6 py-2 border-b-1 border-gray-100">
       <header className=" container flex items-center justify-between py-3 mx-auto max-w-9xl
        ">
-        <Link to="/" className="text-xl border border-blue-200 p-1 font-bold mr-auto uppercase text-gray-900 drop-shadow-md">
+        <Link to="/" className="text-xl font-serif p-1 font-bold mr-auto uppercase text-gray-900 drop-shadow-md">
              Rate-It
         </Link>
         <div className="flex items-center space-x-6">
@@ -17,7 +17,7 @@ function Header() {
   <input
     type="search"
     placeholder="Search..."
-    className="font-dramatic text-sm border rounded-full 
+    className="font-mono text-sm border rounded-full 
       py-1 pl-9 pr-4 outline-none
         focus:ring-1 focus:ring-primary"
     />

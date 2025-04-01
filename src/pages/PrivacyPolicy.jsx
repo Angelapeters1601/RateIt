@@ -1,6 +1,6 @@
 function PrivacyPolicy() {
     return (
-      <div className="mx-w-2xl mx-auto px-6 py-10 text-center container border border-gray-200">
+      <div className="mx-w-2xl mx-auto px-6 font-serif py-10 text-center container border border-gray-200">
         <h1 className="text-l font-bold uppercase text-gray-900 mb-4 underline underline-offset-3">Privacy Policy</h1>
         <p className="text-gray-700 mb-6 text-sm">
           Your privacy is important to us. This Privacy Policy explains how we
