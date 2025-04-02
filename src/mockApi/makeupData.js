@@ -1,7 +1,6 @@
-  // src/data/makeupData.js
 const makeupData = [
     {
-      id: 1,
+      id: 178965,
       category: "makeup",
       name: "Dior 24H Color Stay Nail Polish",
       editorRating: 4.5,
@@ -13,11 +12,11 @@ const makeupData = [
       description: "Long-wearing nail polish with patented color-lock technology and gel-like shine.",
       pros: ["80+ color options", "Dries in 5 minutes", "Chip-resistant"],
       cons: ["Requires 2 coats", "Strong chemical smell"],
-      ratingRank: 3,
+      ratingRank: 5,
       limitedEdition: true
     },
     {
-      id: 2,
+      id: 677972,
       category: "makeup",
       name: "Dior Volumizing Mascara",
       editorRating: 4.6,
@@ -33,7 +32,7 @@ const makeupData = [
       bestFor: ["Volume", "Length"]
     },
     {
-      id: 3,
+      id: 389087,
       category: "makeup",
       name: "Mary Kay Hydrating Foundation",
       editorRating: 4.8,
@@ -45,11 +44,11 @@ const makeupData = [
       description: "Long-lasting foundation with moisturizing ingredients and medium to full coverage.",
       pros: ["Hydrating", "Medium coverage", "Non-comedogenic"],
       cons: ["Can get oily", "Not available in many shades"],
-      ratingRank: 2,
+      ratingRank: 3,
       bestFor: ["Dry Skin", "Hydration"]
     },
     {
-        id: 4,
+        id: 468687,
         category: "makeup",
         name: "Black up Lipstick",
         editorRating: 4.7,
@@ -61,11 +60,11 @@ const makeupData = [
         description: "Satin-finish lipstick with rich color payoff in an array of shades.",
         pros: ["Long-wearing", "Moisturizing", "Non-drying"],
         cons: ["Requires reapplication after meals"],
-        ratingRank: 1,
+        ratingRank: 2,
         limitedEdition: false
       },
       {
-        id: 5,
+        id: 890875,
         category: "makeup",
         name: "Maybelline Spray",
         editorRating: 4.6,
@@ -77,7 +76,7 @@ const makeupData = [
         description: "Oil-free setting spray to help makeup stay fresh for up to 16 hours.",
         pros: ["Oil control", "Long-lasting", "Lightweight"],
         cons: ["Can feel drying for dry skin", "Strong scent"],
-        ratingRank: 5,
+        ratingRank: 1,
         bestFor: ["Oil Control"]
       }
   ];

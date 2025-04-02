@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
+import savedReviewsReducer from "./features/reviews/savedReviewsSlice";
 
-
-const store = configureStore({
-reducer: {}
-}) 
-   
-
+ const store = configureStore({
+  reducer: {
+    savedReviews: savedReviewsReducer,
+  },
+});
 export default store

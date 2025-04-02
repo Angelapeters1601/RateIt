@@ -1,6 +1,6 @@
 const fragranceData = [
     {
-      id: 1,
+      id: 178996,
       category: "fragrance",
       name: "Ce noir",
       editorRating: 4.7,
@@ -12,11 +12,11 @@ const fragranceData = [
       description: "A luxurious blend of jasmine sambac, sandalwood, and vanilla with exceptional sillage and longevity.",
       pros: ["Unique scent profile", "Compliment magnet", "Elegant packaging"],
       cons: ["Premium price", "Not for subtle scent lovers"],
-      ratingRank: 2,
+      ratingRank: 5,
       notes: ["Top: Bergamot", "Heart: Jasmine", "Base: Sandalwood"]
     },
     {
-      id: 2,
+      id: 2765389,
       category: "fragrance",
       name: "Xo Khloe",
       editorRating: 4.5,
@@ -28,11 +28,11 @@ const fragranceData = [
       description: "A light and refreshing cologne with top notes of lime and bergamot.",
       pros: ["Fresh", "Light scent", "Great for hot weather"],
       cons: ["Scent fades quickly", "Not suitable for formal events"],
-      ratingRank: 3,
+      ratingRank: 4,
       bestFor: ["Summer", "Casual Days"]
     },
     {
-      id: 3,
+      id: 987543,
       category: "fragrance",
       name: "La Belle",
       editorRating: 4.8,
@@ -44,11 +44,11 @@ const fragranceData = [
       description: "An oud-based perfume with a warm blend of amber and patchouli for a bold and intense scent.",
       pros: ["Long-lasting", "Powerful", "Elegant bottle"],
       cons: ["Strong scent", "Pricey"],
-      ratingRank: 1,
+      ratingRank: 3,
       notes: ["Top: Saffron", "Heart: Oud", "Base: Amber"]
     },
     {
-        id: 4,
+        id: 897654,
         category: "fragrance",
         name: "La Beau",
         editorRating: 4.6,
@@ -64,7 +64,7 @@ const fragranceData = [
         notes: ["Top: Bergamot", "Heart: Lemon", "Base: Musk"]
       },
       {
-        id: 5,
+        id: 578899,
         category: "fragrance",
         name: "Lancome La Nuit",
         editorRating: 4.7,
@@ -76,7 +76,7 @@ const fragranceData = [
         description: "A luxurious perfume with rich notes of cedarwood, amber, and vanilla for a warm, sensual finish.",
         pros: ["Unique scent", "Long-lasting", "Sophisticated"],
         cons: ["Not suitable for all seasons", "Expensive"],
-        ratingRank: 5,
+        ratingRank: 1,
         notes: ["Top: Cedarwood", "Heart: Amber", "Base: Vanilla"]
       }
     ];
