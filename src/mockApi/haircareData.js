@@ -1,22 +1,22 @@
  const haircareData = [
     {
-      id: 1,
-      category: "haircare",
-      name: "Sunatoria Keratin Hair Mask",
-      editorRating: 4.9,
-      editorReview: "Reduced breakage by 72% in our lab tests after just 3 uses. The ultimate rescue treatment for damaged hair.",
-      editorName: "Jamal Williams",
-      editorTitle: "Master Stylist",
-      price: 38.00,
-      image: "/public/hair-mask.jpg",
-      description: "Intensive reconstructing mask with keratin and amino acids for severely damaged or chemically treated hair.",
-      pros: ["Visible results after 1 use", "Color-safe", "5-minute treatment"],
-      cons: ["Heavy scent", "Not for fine hair"],
-      ratingRank: 1,
-      awards: ["Best Splurge", "Beauty Lab Winner"]
-    },
+        id: 567789,
+        category: "haircare",
+        name: "Conair Detangling Hair Brush",
+        editorRating: 4.3,
+        editorReview: "Smooths through knots with ease, ideal for wet or dry hair without causing damage.",
+        editorName: "Lily Rose",
+        editorTitle: "Styling Specialist",
+        price: 12.50,
+        image: "/public/brush.avif",
+        description: "A flexible hairbrush designed to minimize breakage while detangling hair gently.",
+        pros: ["Minimizes breakage", "Works for all hair types", "Durable"],
+        cons: ["Can be too soft for very thick hair"],
+        ratingRank: 5,
+        bestFor: ["All Hair Types"]
+      },
     {
-      id: 2,
+      id: 566788,
       category: "haircare",
       name: "TRESemme Revitalizing Shampoo",
       editorRating: 4.6,
@@ -28,11 +28,11 @@
       description: "Shampoo for all hair types that deeply cleanses while maintaining natural oils.",
       pros: ["Gentle", "Moisturizing", "Sulfate-free"],
       cons: ["May not remove heavy product buildup"],
-      ratingRank: 2,
+      ratingRank: 4,
       bestFor: ["Everyday Use", "Moisture"]
     },
     {
-      id: 3,
+      id: 3677888,
       category: "haircare",
       name: "TRESemme Volume Boosting Spray",
       editorRating: 4.4,
@@ -48,7 +48,7 @@
       bestFor: ["Fine Hair", "Volume"]
     },
     {
-        id: 4,
+        id: 789074,
         category: "haircare",
         name: "Hawaian-Silky Leave-In Conditioner",
         editorRating: 4.8,
@@ -60,25 +60,24 @@
         description: "Lightweight leave-in treatment that provides intense hydration without weighing down hair.",
         pros: ["Hydrating", "Heat-protectant", "No residue"],
         cons: ["Needs to be used sparingly"],
-        ratingRank: 4,
+        ratingRank: 2,
         bestFor: ["Dry Hair", "Heat Protection"]
       },
       {
-        id: 5,
+        id: 198765,
         category: "haircare",
-        name: "Conair Detangling Hair Brush",
-        editorRating: 4.3,
-        editorReview: "Smooths through knots with ease, ideal for wet or dry hair without causing damage.",
-        editorName: "Lily Rose",
-        editorTitle: "Styling Specialist",
-        price: 12.50,
-
-        image: "/public/brush.avif",
-        description: "A flexible hairbrush designed to minimize breakage while detangling hair gently.",
-        pros: ["Minimizes breakage", "Works for all hair types", "Durable"],
-        cons: ["Can be too soft for very thick hair"],
-        ratingRank: 5,
-        bestFor: ["All Hair Types"]
-      }
+        name: "Sunatoria Keratin Hair Mask",
+        editorRating: 4.9,
+        editorReview: "Reduced breakage by 72% in our lab tests after just 3 uses. The ultimate rescue treatment for damaged hair.",
+        editorName: "Jamal Williams",
+        editorTitle: "Master Stylist",
+        price: 38.00,
+        image: "/public/hair-mask.jpg",
+        description: "Intensive reconstructing mask with keratin and amino acids for severely damaged or chemically treated hair.",
+        pros: ["Visible results after 1 use", "Color-safe", "5-minute treatment"],
+        cons: ["Heavy scent", "Not for fine hair"],
+        ratingRank: 1,
+        awards: ["Best Splurge", "Beauty Lab Winner"]
+      },
     ];
     export default haircareData;

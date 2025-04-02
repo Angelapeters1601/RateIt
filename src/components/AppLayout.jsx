@@ -2,6 +2,8 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import FloatingSaveButton from '../ui/FloatingSaveButton';
+
 
 const AppLayout = () => {
   return (
@@ -11,6 +13,7 @@ const AppLayout = () => {
       <main className="w-full mx-auto lg:py-10 flex-grow">
         <Outlet />
       </main>
+      <FloatingSaveButton />
       <Footer />
     </div>
   );

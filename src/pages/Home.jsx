@@ -1,34 +1,10 @@
 import { StarIcon, ChatBubbleLeftEllipsisIcon, CheckBadgeIcon } from "@heroicons/react/24/solid";
 import heroImage from "../assets/img2.jpg";
 import { motion } from "framer-motion";
-import CountUp from 'react-countup';
-import VisibilitySensor from 'react-visibility-sensor';
+import HomeCarousel  from "../ui/HomeCarousel";
+import ReviewCounter from "../ui/ReviewCounter";
 
-function ReviewCounter({ targetCount }) {
-  return (
-    <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
-      {({ isVisible }) => (
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 1.5 }} 
-        >
-          {isVisible ? (
-            <CountUp 
-              end={targetCount} 
-              duration={2.5} 
-              separator=","
-              suffix="+ Verified Reviews"
-              className="text-3xl font-mono font-bold"
-            />
-          ) : (
-            <span>0+ Verified Reviews</span>
-          )}
-        </motion.div>
-      )}
-    </VisibilitySensor>
-  );
-}
+<ReviewCounter />
 
 function Home() {
   return (
@@ -89,20 +65,7 @@ function Home() {
           </div>
         </div>
       </section>
-    <section className="py-16">
-    <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-2xl font-serif font-medium text-gray-900 mb-6">
-        Our Mission
-        </h2>
-        <p className=" text-gray-600 font-mono leading-relaxed">
-        To empower beauty consumers with transparent, science-backed product reviews 
-        that cut through marketing hype. We combine clinical expertise with real-user 
-        experiences to help you make informed decisions about what truly works for 
-        your unique skin needs.
-        </p>
-    </div>
-    </section>
-
+ 
       <section className="max-w-7xl mx-auto px-6 py-16 bg-gray-200">
         <div className="text-center mb-16">
           <h2 className="text-2xl font-serif font-medium text-gray-900 mb-4">
@@ -116,6 +79,20 @@ function Home() {
             suffixClassName="text-2xl font-normal text-gray-600"
             />
         </div>
+        <HomeCarousel />
+        <section className="py-16">
+            <div className="max-w-4xl mx-auto px-6 text-center">
+                <h2 className="text-2xl font-serif font-medium text-gray-900 mb-6">
+                Our Mission
+                </h2>
+                <p className=" text-gray-600 font-mono leading-relaxed">
+                To empower beauty consumers with transparent, science-backed product reviews 
+                that cut through marketing hype. We combine clinical expertise with real-user 
+                experiences to help you make informed decisions about what truly works for 
+                your unique skin needs.
+                </p>
+            </div>
+            </section>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div 

@@ -11,7 +11,9 @@ function Header() {
              Rate-It
         </Link>
         <div className="flex items-center space-x-6">
-          <Button type="primary">Subscribe</Button>
+        <Link to="/contact">
+            <Button type="primary">Subscribe</Button>
+        </Link>
           <Button type="plain"> Sign in</Button>
           <div className="relative">
   <input

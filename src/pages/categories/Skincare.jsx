@@ -1,9 +1,16 @@
-function Skincare() {
-    return (
-        <div>
-            skincare
-        </div>
-    )
-}
+import useFetchProducts from "../../hooks/useFetchProducts";
 
-export default Skincare
+function Skincare () {
+  const { products, loading } = useFetchProducts("skincare");
+
+  return (
+    <div>
+      <h1>Skincare Products</h1>
+      <hr />
+      {loading ? <p>Loading...</p> : products.map((item) => 
+      <p key={item.id}>{item.name}</p>)}
+    </div>
+  );
+};
+
+export default Skincare;

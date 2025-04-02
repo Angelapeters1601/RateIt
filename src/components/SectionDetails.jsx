@@ -1,9 +1,25 @@
-import { useLocation } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
+import { BookmarkIcon as BookmarkSolid } from "@heroicons/react/24/solid";
+import { BookmarkIcon as BookmarkOutline } from "@heroicons/react/24/outline";
+import { useDispatch, useSelector } from 'react-redux';
+import { addReview, removeReview } from "../features/reviews/savedReviewsSlice";
+
 
 function SectionDetails() {
     const location = useLocation();
-    const { product } = location.state || {};
+    const dispatch = useDispatch();
+    const product = location.state?.product || allProducts.find(p => p.id === numericId);
+    const { items } = useSelector(state => state.savedReviews);
+    const isSaved = items.some(item => item.id === product.id);
+  
+    const handleSaveToggle = () => {
+      if (isSaved) {
+        dispatch(removeReview(product.id));
+      } else {
+        dispatch(addReview(product));
+      }
+    };
 
     if (!product) return (
         <div className="min-h-[70vh] flex items-center justify-center px-4">
@@ -106,12 +122,35 @@ function SectionDetails() {
                         </div>
                     </div>
                     <div className="flex space-x-4">
-                        <button className="px-8 py-3 bg-black text-white text-xs tracking-wider hover:bg-gray-800 transition-colors duration-300">
-                            ADD TO CART
-                        </button>
-                        <button className="px-8 py-3 border border-black text-black text-xs tracking-wider hover:bg-gray-100 transition-colors duration-300">
-                            SAVE FOR LATER
-                        </button>
+                        <a
+                            href={`https://www.amazon.com/s?k=${encodeURIComponent(product.name)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-8 py-3 bg-black text-white text-xs 
+                            tracking-wider hover:bg-amber-600 transition-colors 
+                            duration-300 flex items-center justify-center gap-2"
+                        >
+                            <span>BUY ON AMAZON</span>
+                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M10.6 9.6l-.8 3.2h1.8l-.9-3.2zm5.4 0l-.8 3.2h1.8l-.9-3.2zm4.1-4.7c-.1-.1-.2-.1-.3-.1H4.2c-.1 0-.2 0-.3.1-.1.1-.1.2-.1.3v13.5c0 .1 0 .2.1.3.1.1.2.1.3.1h15.6c.1 0 .2 0 .3-.1.1-.1.1-.2.1-.3V5.2c0-.1 0-.2-.1-.3zm-1.6 10.6c0 .1-.1.2-.2.2H5.7c-.1 0-.2-.1-.2-.2V6.8c0-.1.1-.2.2-.2h12.6c.1 0 .2.1.2.2v9.1z"/>
+                            </svg>
+                        </a>
+                        <button 
+                          onClick={handleSaveToggle} 
+                                className="px-8 py-3 border border-black text-black text-xs tracking-wider hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2"
+                            >
+                                {isSaved ? (
+                                <>
+                                    <BookmarkSolid className="w-4 h-4 text-amber-500" />
+                                    SAVED
+                                </>
+                                ) : (
+                                <>
+                                    <BookmarkOutline className="w-4 h-4" />
+                                    SAVE REVIEW
+                                </>
+                                )}
+                            </button>
                     </div>
                 </div>
             </div>

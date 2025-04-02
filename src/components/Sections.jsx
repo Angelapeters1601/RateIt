@@ -13,7 +13,7 @@ function Sections({ data, title }) {
             <div className="px-8 pt-6 pb-4 border-b border-gray-200">
                 <Link to={`/categories/${title}`} className="
                 bg-pink-200 p-3 mb-5 rounded text-2xl
-                 hover:text-pink-900 hover:bg-gray-100 font-serif 
+                 hover:text-pink-900  hover:bg-gray-100 font-serif 
                  font-semibold text-gray-900 tracking-wide">
                     {title}
                 </Link>

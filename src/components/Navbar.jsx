@@ -6,8 +6,6 @@ function Navbar () {
       <nav className=" lg:bg-stone-200 py-4 font-serif">
         <div className="container mx-auto flex items-center justify-center
          space-x-6 px-6 py-3 ">
-        
-
           <div className="flex space-x-12">
             <Link
               to="/"
@@ -15,7 +13,7 @@ function Navbar () {
             >
               Home
             </Link>
-            
+
             <Link to="/productReviews" className="text-xs font-bold text-gray-800 uppercase hover:text-black hover:underline underline-offset-3">
             Reviews
           </Link>

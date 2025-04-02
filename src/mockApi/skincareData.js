@@ -12,9 +12,25 @@ const skincareData = [
       description: "A pH-balanced cleanser with ceramides and hyaluronic acid that cleanses while maintaining the skin's moisture barrier.",
       pros: ["Non-drying formula", "Fragrance-free", "Works for all skin types"],
       cons: ["Small bottle size", "Can be pricey for daily use"],
-      ratingRank: 1,
+      ratingRank: 5,
       awards: ["Editor's Choice", "Best for Sensitive Skin"]
     },
+    {
+        id: 788995,
+        category: "skincare",
+        name: "Kiehl's Deep Pore Cleansing Mask",
+        editorRating: 4.9,
+        editorReview: "A deep cleansing clay mask that clears pores, removes excess oil, and minimizes blackheads after just one use.",
+        editorName: "Dr. Laura Simmons",
+        editorTitle: "Board-Certified Dermatologist",
+        price: 22.00,
+        image: "/public/mask.jpg",
+        description: "A clay-based mask with activated charcoal and kaolin to deeply cleanse and purify the skin.",
+        pros: ["Detoxifying", "Oil-absorbing", "Brightening"],
+        cons: ["Drying", "Can leave a white residue"],
+        ratingRank: 4,
+        awards: ["Best Pore Cleaner"]
+      },
     {
       id: 897642,
       category: "skincare",
@@ -28,11 +44,11 @@ const skincareData = [
       description: "Intensive night treatment to replenish and firm skin with retinol and peptides.",
       pros: ["Hydrating", "Anti-aging", "Fragrance-free"],
       cons: ["Strong scent", "Can cause irritation for sensitive skin"],
-      ratingRank: 2,
+      ratingRank: 3,
       awards: ["Best Night Cream", "Top Anti-Aging Product"]
     },
     {
-      id: 3,
+      id: 6779793,
       category: "skincare",
       name: "Estelin Vitamin C Serum",
       editorRating: 4.6,
@@ -44,11 +60,11 @@ const skincareData = [
       description: "Brightening serum formulated with 15% pure Vitamin C, hyaluronic acid, and ferulic acid for an even complexion.",
       pros: ["Brightening", "Anti-aging", "Fast absorption"],
       cons: ["Can be sticky", "Requires regular use"],
-      ratingRank: 3,
+      ratingRank: 2,
       awards: ["Best Brightening Serum"]
     },
     {
-      id: 4,
+      id: 478997,
       category: "skincare",
       name: "Seven Minerals Aloe Vera Gel",
       editorRating: 4.5,
@@ -60,24 +76,9 @@ const skincareData = [
       description: "Pure aloe vera gel to cool and soothe sunburns, minor burns, and skin irritation.",
       pros: ["Cooling", "Non-greasy", "Soothing"],
       cons: ["Not for dry skin", "Can be sticky on application"],
-      ratingRank: 4,
+      ratingRank: 1,
       awards: ["Best Sunburn Relief"]
     },
-    {
-      id: 5,
-      category: "skincare",
-      name: "Kiehl's Deep Pore Cleansing Mask",
-      editorRating: 4.9,
-      editorReview: "A deep cleansing clay mask that clears pores, removes excess oil, and minimizes blackheads after just one use.",
-      editorName: "Dr. Laura Simmons",
-      editorTitle: "Board-Certified Dermatologist",
-      price: 22.00,
-      image: "/public/mask.jpg",
-      description: "A clay-based mask with activated charcoal and kaolin to deeply cleanse and purify the skin.",
-      pros: ["Detoxifying", "Oil-absorbing", "Brightening"],
-      cons: ["Drying", "Can leave a white residue"],
-      ratingRank: 5,
-      awards: ["Best Pore Cleaner"]
-    },
+  
   ];
   export default skincareData;
