@@ -1,4 +1,4 @@
-import { Routes, Route, Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -13,6 +13,7 @@ import Makeup from "./pages/categories/Makeup";
 import Fragrances from "./pages/categories/Fragrances";
 import Haircare from "./pages/categories/Haircare";
 import SavedReviews from "./components/SavedReviews";
+import ProductCategoryDetails from "./components/ProductCategoryDetails";
 import "./App.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="products/:id" element={<SectionDetails />} />
         <Route path="reviewForm" element={<ReviewForm />} />
         <Route path="/saved" element={<SavedReviews />}/>
+        <Route path="/productcategorydetails/:productId" element={<ProductCategoryDetails />} />
         <Route path="categories">
           <Route path="skincare" element={<Skincare />} />
           <Route path="haircare" element={<Haircare />} />
