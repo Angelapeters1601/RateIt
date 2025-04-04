@@ -292,7 +292,7 @@ function About() {
             className="text-center mt-8"
           >
             <p className="text-gray-600 italic font-mono">
-              Every line of code in this project was written with so love,
+              Every line of code in this project was written with so much love,
                intention, and passion. I hope you do like it 😊.
             </p>
           </motion.div>

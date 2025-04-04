@@ -76,7 +76,6 @@ function ReviewForm({ productId, productName, onClose }) {
           rating={formData.rating} 
           interactive={true} 
           onRatingChange={(rating) => {
-            console.log("New rating:", rating); 
             setFormData(prev => ({ ...prev, rating }))} }
         />
       </div>
