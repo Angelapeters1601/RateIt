@@ -12,11 +12,14 @@ function Home() {
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent z-10" />
-        <img 
-          src={heroImage} 
-          alt="Woman applying skincare products" 
-          className="w-full h-[500px] object-cover"
-        />
+        <Fade left duration={1000}>
+            <img 
+            src={heroImage} 
+            alt="Woman applying skincare products" 
+            className="w-full h-[500px] object-cover"
+            />
+        </Fade>
+      
         <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
           <div className="text-center max-w-3xl">
             <Fade top duration={1000}>
