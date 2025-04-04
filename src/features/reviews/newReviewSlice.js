@@ -3,10 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const loadReviews = () => {
   try {
     const serialized = localStorage.getItem('userReviews');
-    console.log("Loaded reviews:", serialized);
     return serialized ? JSON.parse(serialized) : [];
   } catch(error) {
-    console.error("Couldn't parse localStorage data", error);
     return [];
   }
 };

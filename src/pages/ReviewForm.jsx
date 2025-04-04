@@ -35,7 +35,6 @@ function ReviewForm({ productId, productName, onClose }) {
         rating: formData.rating,
         comment: formData.comment.trim()
       }));
-      console.log("Review submitted successfully");
 
       setFormData({
         userName: '',
@@ -46,7 +45,6 @@ function ReviewForm({ productId, productName, onClose }) {
       setStatus('succeeded');
       onClose()
     } catch (error) {
-      console.error('Submission failed:', error);
       setStatus('failed');
     }
   };

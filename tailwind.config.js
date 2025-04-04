@@ -18,7 +18,7 @@ export default {
       },
     },
     plugins: [],
-  };
-  
-
-
+    corePlugins: {
+      // Ensure scrollbar utilities aren't removed if you're using Tailwind's corePlugins
+    }
+  }
