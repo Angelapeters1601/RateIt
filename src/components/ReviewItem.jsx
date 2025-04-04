@@ -69,10 +69,12 @@ function ReviewItem({ review }) {
             </div>
           </div>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-1">
             <div className="flex justify-between items-start">
               <div>
-                <h4 className="font-bold font-mono tracking-wider text-lg uppercase text-gray-800">{review.userName}</h4>
+                <h4 className="font-semibold
+                 font-mono tracking-wider text-lg uppercase
+                  text-gray-800">{review.userName}</h4>
               </div>
               <span className="text-sm text-gray-400">
                 {new Date(review.date).toLocaleDateString('en-US', {

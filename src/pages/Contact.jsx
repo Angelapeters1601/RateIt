@@ -145,18 +145,18 @@ function ContactUs() {
             className="w-full text-sm p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
           ></textarea>
         </motion.div>
-        
-        <motion.div
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          <Button
-            type="primary"
-            className="w-full bg-primary text-white font-bold py-4 rounded-lg hover:bg-opacity-90 transition"
-          >
-            Send Message
-          </Button>
-        </motion.div>
+            <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            >
+                <button
+                type="submit"
+                className=" justify-center bg-blue-500 text-sm text-black w-40 font-bold py-3 
+                rounded-lg hover:bg-opacity-90 transition"
+            >
+                Send Message
+            </button>
+            </motion.div>
       </motion.form>
 
       {status && (

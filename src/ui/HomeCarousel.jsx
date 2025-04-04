@@ -9,7 +9,7 @@ export function HomeCarousel() {
       title: "Editor's Choice: Summer 2024",
       subtitle: "Dermatologist-approved skincare essentials",
       cta: "Explore Products",
-      image: "/public/Br.jpg",
+      image: "/Br.jpg",
       href: "/skincare",
       theme: "bg-gradient-to-r from-blue-900/40 to-emerald-900/30"
     },
@@ -17,7 +17,7 @@ export function HomeCarousel() {
       title: "Foundation Favorites",
       subtitle: "Top-rated base products for every skin tone",
       cta: "Find Your Shade",
-      image: "/public/mac.avif",
+      image: "/mac.avif",
       href: "/makeup",
       theme: "bg-gradient-to-r from-rose-900/40 to-fuchsia-900/30"
     },
@@ -25,7 +25,7 @@ export function HomeCarousel() {
       title: "Fragrance Awards",
       subtitle: "2024 Reader's Choice winners",
       cta: "Discover Scents",
-      image: "/public/xerjoff.jpg",
+      image: "/xerjoff.jpg",
       href: "/fragrance",
       theme: "bg-gradient-to-r from-amber-900/40 to-purple-900/30"
     },
@@ -33,7 +33,7 @@ export function HomeCarousel() {
       title: "Haircare Heroes",
       subtitle: "Salon-quality results at home",
       cta: "Nuture Your scalp",
-      image: "/public/tph.webp",
+      image: "/tph.webp",
       theme: "bg-gradient-to-r from-violet-900/40 to-indigo-900/30",
       href: "/haircare"
     },
@@ -41,7 +41,7 @@ export function HomeCarousel() {
       title: "Clean Beauty Guide",
       subtitle: "EWG-verified products for sensitive skin",
       cta: "Bask in Euphoria",
-      image: "/public/laroche.webp",
+      image: "/laroche.webp",
       href: "/clean-beauty",
       theme: "bg-gradient-to-r from-teal-900/40 to-cyan-900/30"
     }
