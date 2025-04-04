@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 export function HomeCarousel() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const slides = [
+  const [slides] = useState([
     {
       title: "Editor's Choice: Summer 2024",
       subtitle: "Dermatologist-approved skincare essentials",
@@ -43,24 +40,66 @@ export function HomeCarousel() {
     {
       title: "Clean Beauty Guide",
       subtitle: "EWG-verified products for sensitive skin",
-      cta: "Learn More",
+      cta: "Bask in Euphoria",
       image: "/public/laroche.webp",
       href: "/clean-beauty",
       theme: "bg-gradient-to-r from-teal-900/40 to-cyan-900/30"
     }
-  ];
+  ]);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
+  const animationRef = useRef(null);
+  const progressRef = useRef(null);
+
+  const navigate = (newDirection) => {
+    cancelAnimationFrame(animationRef.current);
+    setDirection(newDirection);
+    
+    setCurrentIndex(prev => {
+      const newIndex = prev + newDirection;
+      return (newIndex + slides.length) % slides.length;
+    });
+  };
+
+  const nextSlide = () => navigate(1);
+  const prevSlide = () => navigate(-1);
+  const goToSlide = (index) => {
+    const diff = index - currentIndex;
+    navigate(diff > 0 ? 1 : -1);
+  };
 
   useEffect(() => {
     if (isHovered) return;
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [isHovered, slides.length]);
-
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  const goToSlide = (index) => setCurrentSlide(index);
+    
+    let startTime = null;
+    const duration = 5000;
+    
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      if (progressRef.current) {
+        progressRef.current.style.width = `${progress * 100}%`;
+      }
+      
+      if (progress < 1) {
+        animationRef.current = requestAnimationFrame(animate);
+      } else {
+        nextSlide();
+        startTime = null;
+        if (progressRef.current) {
+          progressRef.current.style.width = '0%';
+        }
+        animationRef.current = requestAnimationFrame(animate);
+      }
+    };
+    
+    animationRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationRef.current);
+  }, [isHovered]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -69,7 +108,48 @@ export function HomeCarousel() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [nextSlide, prevSlide]);
+  }, []);
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? '105%' : '-105%',
+      opacity: 0.5,
+      scale: 0.95
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        x: { type: 'spring', stiffness: 150, damping: 25 },
+        opacity: { duration: 0.4 },
+        scale: { duration: 0.4 }
+      }
+    },
+    exit: (direction) => ({
+      x: direction > 0 ? '-105%' : '105%',
+      opacity: 0.5,
+      scale: 0.95,
+      transition: {
+        x: { type: 'spring', stiffness: 110, damping: 25 },
+        opacity: { duration: 0.3 },
+        scale: { duration: 0.3 }
+      }
+    })
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1 + 0.3,
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    })
+  };
 
   return (
     <div 
@@ -78,95 +158,117 @@ export function HomeCarousel() {
       onMouseLeave={() => setIsHovered(false)}
       aria-roledescription="carousel"
     >
-      <div 
-        className="flex h-full transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <div 
-            key={index} 
-            className="flex-shrink-0 w-full h-full relative"
-            aria-roledescription="slide"
-            aria-label={`Slide ${index + 1} of ${slides.length}`}
-          >
-            <img 
-              src={slide.image} 
-              alt={`${slide.title} - ${slide.subtitle}`}
+      <AnimatePresence custom={direction} initial={false}>
+        <motion.div
+          key={currentIndex}
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          className="absolute inset-0 w-full h-full"
+        >
+          <div className="flex-shrink-0 w-full h-full relative">
+            <motion.img 
+              src={slides[currentIndex].image} 
+              alt={`${slides[currentIndex].title} - ${slides[currentIndex].subtitle}`}
               className="w-full h-full object-cover"
-              loading={index === 0 ? 'eager' : 'lazy'}
+              loading={currentIndex < 2 ? 'eager' : 'lazy'}
+              initial={{ scale: 1.1 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
             />
-            <div className={`absolute inset-0 ${slide.theme} flex items-center`}>
+            <div className={`absolute inset-0 ${slides[currentIndex].theme} flex items-center`}>
               <div className="max-w-2xl px-6 md:px-16 text-center mx-auto">
                 <motion.h2 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
+                  custom={0}
+                  initial="hidden"
+                  animate="visible"
+                  variants={contentVariants}
                   className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-3"
                 >
-                  {slide.title}
+                  {slides[currentIndex].title}
                 </motion.h2>
                 <motion.p 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-lg
-                   md:text-xl font-mono text-white/90 mb-6"
+                  custom={1}
+                  initial="hidden"
+                  animate="visible"
+                  variants={contentVariants}
+                  className="text-lg md:text-xl font-mono text-white/90 mb-6"
                 >
-                  {slide.subtitle}
+                  {slides[currentIndex].subtitle}
                 </motion.p>
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.6 }}
+                  custom={2}
+                  initial="hidden"
+                  animate="visible"
+                  variants={contentVariants}
                 >
                   <Link
-                  to="/ProductReviews"
+                    to={slides[currentIndex].href}
                     className="inline-block bg-white text-gray-900 hover:bg-gray-100 px-6 py-2 md:px-8 md:py-3 rounded-md font-medium transition-colors duration-300"
                   >
-                    {slide.cta}
+                    {slides[currentIndex].cta}
                   </Link>
                 </motion.div>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-      <button 
+        </motion.div>
+      </AnimatePresence>
+
+      <motion.button 
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2
          bg-white/30 hover:bg-white/50 p-3 rounded-full
           backdrop-blur-sm transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-white"
+           focus:outline-none focus:ring-2 focus:ring-white z-10"
         aria-label="Previous slide"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
       >
         <ChevronLeftIcon className="h-6 w-6 text-white" />
-      </button>
-      <button 
+      </motion.button>
+      <motion.button 
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white"
+        className="absolute right-4 top-1/2 -translate-y-1/2 
+        bg-white/30 hover:bg-white/50 p-3 rounded-full 
+        backdrop-blur-sm transition-all duration-300 
+        focus:outline-none focus:ring-2 focus:ring-white z-10"
         aria-label="Next slide"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
       >
         <ChevronRightIcon className="h-6 w-6 text-white" />
-      </button>
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+      </motion.button>
+
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, index) => (
-          <button
+          <motion.button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${currentSlide === index ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/70'}`}
+            className={`h-2.5 w-2.5 rounded-full ${currentIndex === index ? 'bg-white' : 'bg-white/50 hover:bg-white/70'}`}
             aria-label={`Go to slide ${index + 1}`}
+            animate={{
+              width: currentIndex === index ? 32 : 10,
+              opacity: currentIndex === index ? 1 : 0.7
+            }}
+            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
           />
         ))}
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-10">
         <motion.div
-          key={`progress-${currentSlide}`}
+          ref={progressRef}
+          className="h-full bg-white"
+          initial={{ width: '0%' }}
           animate={{ width: isHovered ? '0%' : '100%' }}
           transition={{ duration: 5, ease: 'linear' }}
-          className="h-full bg-white"
         />
       </div>
     </div>
   );
 }
+
 export default HomeCarousel;

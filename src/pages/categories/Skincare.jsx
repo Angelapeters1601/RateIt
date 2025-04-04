@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import useFetchProducts from "../../hooks/useFetchProducts";
 import { Link } from "react-router-dom";
 import Loader from "../../ui/Loader";
@@ -28,31 +29,67 @@ function Skincare() {
 
   if (skincareProducts.length === 0) {
     return (
-      <div className="text-center py-12">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center py-12"
+      >
         <h2 className="text-2xl font-bold text-gray-700 mb-2">
           No Skincare Products Found
         </h2>
         <p className="text-gray-500">
-        Our skincare collection is currently being updated. Check back soon!
+          Our skincare collection is currently being updated. Check back soon!
         </p>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <section className="container mx-auto px-4 py-8">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Skincare Essentials</h1>
-        <p className="text-gray-600 mt-2">
-          Dermatologist-approved products for your skincare routine
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="container mx-auto px-4 py-8"
+    >
+      <motion.header
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="mb-8"
+      >
+        <h1 className="text-3xl font-bold text-gray-900 font-mono">Skincare Essentials</h1>
+        <p className="text-gray-600 mt-2 font-mono">
+          Dermatologist-approved products for your skincare routine.
         </p>
-      </header>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-gray-600 font-mono border-b border-gray-500 py-5 mt-3"
+        >
+          The Alchemy of Radiance<br />
+          Where science meets serenity in sacred self-care rituals. Our skincare is a symphony of clinical precision and botanical intelligence—each formulation a love letter to your skin's potential. This is not maintenance; it's transformation bottled.
+        </motion.p>
+      </motion.header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {skincareProducts.map((product) => (
-          <article 
-            key={product.id} 
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+       lg:grid-cols-3 gap-20 gap-x-15">
+        {skincareProducts.map((product, index) => (
+          <motion.article
+            key={product.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.5,
+              delay: index * 0.05,
+              ease: "easeOut"
+            }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ y: -3 }}
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
           >
             <div className="relative pb-[100%]">
               <img 
@@ -75,20 +112,27 @@ function Skincare() {
                 </span>
                 <RatingStars rating={product.rating} />
               </div>
-              <Link
-                to={`/productcategorydetails/${product.id}`}
-                state={{ product,
-                category: "skincare" }}
-                className="flex items-center justify-center w-full border border-indigo-600 text-indigo-600 hover:bg-indigo-50 py-2 rounded-md transition-colors group-hover:border-indigo-700 group-hover:text-indigo-700"
+              <motion.div
+                whileTap={{ scale: 0.98 }}
+                className="mt-5"
               >
-                See Details
-                <ArrowRightIcon className="h-4 w-4 ml-2" />
-              </Link>
+                <Link
+                  to={`/productcategorydetails/${product.id}`}
+                  state={{ product, category: "skincare" }}
+                  className="flex items-center font-mono justify-center
+                  w-full border border-gray-300
+                  text-gray-500 hover:bg-indigo-50 py-2 
+                  rounded-md transition-colors"
+                >
+                  See Details
+                  <ArrowRightIcon className="h-4 w-4 ml-2" />
+                </Link>
+              </motion.div>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

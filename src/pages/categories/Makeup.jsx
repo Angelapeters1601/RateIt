@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import useFetchProducts from "../../hooks/useFetchProducts";
 import { Link } from "react-router-dom";
 import Loader from "../../ui/Loader";
@@ -30,31 +31,67 @@ function Makeup() {
 
   if (makeupProducts.length === 0) {
     return (
-      <div className="text-center py-12">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center py-12"
+      >
         <h2 className="text-2xl font-bold text-gray-700">
           No Makeup Products Found
         </h2>
-        <p className="text-gray-500">
+        <p className="text-gray-500 font-mono">
           Our makeup collection is currently being updated. Check back soon!
         </p>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <section className="container mx-auto px-4 py-8">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Makeup Collection</h1>
-        <p className="text-gray-600 mt-2">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="container mx-auto px-4 py-8"
+    >
+      <motion.header
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        viewport={{ once: true }}
+        className="mb-8"
+      >
+        <h1 className="text-3xl font-bold text-gray-900 font-mono">Makeup Collection</h1>
+        <p className="text-gray-600 mt-2 font-mono">
           Explore our premium range of makeup products
         </p>
-      </header>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-gray-600 mt-3 font-mono border-b border-gray-500 py-5"
+        >
+          Wearable Artistry<br />
+          Pigments that rival nature's palette, textures that defy expectation. Our makeup collection is crafted for those who view their face as a canvas and application as a ceremony. Where every stroke celebrates the art of becoming.
+        </motion.p>
+      </motion.header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {makeupProducts.map((product) => (
-          <article
+      <div className="grid grid-cols-1 sm:grid-cols-2
+       md:grid-cols-3 lg:grid-cols-3 gap-x-20 gap-6">
+        {makeupProducts.map((product, index) => (
+          <motion.article
             key={product.id}
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.5,
+              delay: index * 0.05,
+              ease: "easeOut"
+            }}
+            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ y: -3 }}
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
           >
             <div className="relative pb-[100%]">
               <img
@@ -65,31 +102,39 @@ function Makeup() {
               />
             </div>
             <div className="p-4">
-              <h3 className="font-semibold text-lg mb-1 line-clamp-1">
+              <h3 className="font-semibold font-mono text-lg mb-1 line-clamp-1">
                 {product.name}
               </h3>
-              <p className="text-gray-500 text-sm mb-2 line-clamp-2">
+              <p className="text-gray-500 text-sm font-mono mb-2 line-clamp-2">
                 {product.description}
               </p>
               <div className="flex justify-between items-center mt-3">
-                <span className="font-bold text-gray-900">
+                <span className="font-bold font-mono text-gray-900">
                   ${product.price.toFixed(2)}
                 </span>
                 <RatingStars rating={product.rating} />
               </div>
-              <Link
-                to={`/productcategorydetails/${product.id}`}
-                state={{ product, category: "makeup" }}
-                className="flex items-center justify-center w-full border border-indigo-600 text-indigo-600 hover:bg-indigo-50 py-2 rounded-md transition-colors"
+              <motion.div
+                whileTap={{ scale: 0.98 }}
+                className="mt-5"
               >
-                See Details
-                <ArrowRightIcon className="h-4 w-4 ml-2" />
-              </Link>
+                <Link
+                  to={`/productcategorydetails/${product.id}`}
+                  state={{ product, category: "makeup" }}
+                  className="flex items-center font-mono justify-center
+                  w-full border border-gray-300
+                  text-gray-500 hover:bg-indigo-50 py-2 
+                  rounded-md transition-colors"
+                >
+                  See Details
+                  <ArrowRightIcon className="h-4 w-4 ml-2" />
+                </Link>
+              </motion.div>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

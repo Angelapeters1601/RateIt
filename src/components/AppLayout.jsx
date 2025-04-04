@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import FloatingSaveButton from '../ui/FloatingSaveButton';
+import SearchResultsPage from "./SearchResultsPage";
 
 
 const AppLayout = () => {
@@ -14,6 +15,7 @@ const AppLayout = () => {
         <Outlet />
       </main>
       <FloatingSaveButton />
+      {/* <SearchResultsPage /> */}
       <Footer />
     </div>
   );
