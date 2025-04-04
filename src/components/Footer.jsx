@@ -24,7 +24,8 @@ const Footer = () => {
       viewport={{ once: true, margin: "-50px" }}
       className="bg-gray-900 text-white py-8 mt-10 font-mono"
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+      <div className="container mx-auto flex flex-col 
+      md:flex-row items-center justify-between px-6">
         <motion.h1 
           whileHover={{ scale: 1.05 }}
           className="uppercase text-lg font-bold font-serif tracking-wide py-3 px-4 text-primary"
