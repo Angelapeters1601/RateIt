@@ -4,7 +4,6 @@ import AppLayout from "./components/AppLayout";
 import "./App.css";
 import { PageSkeleton } from './ui/PageSkeleton';
 
-// Lazy load all page components
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));

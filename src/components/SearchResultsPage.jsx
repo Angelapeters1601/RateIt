@@ -1,56 +1,44 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSearchResults } from '../features/search/searchSlice';
-import searchProducts from '../helpers/searchService';
-import Loader from '../ui/Loader';
-import Sections from './Sections';
+import { useSelector } from 'react-redux';
+import ProductCard from './ProductCard';
+import EmptyResults from './EmptyResults';
+import Loader from '../ui/Loader'; 
+import { useState, useEffect } from 'react';
 
 function SearchResultsPage() {
-  const dispatch = useDispatch();
   const { searchQuery, searchResults } = useSelector(state => state.search);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const fetchResults = async () => {
-      if (searchQuery) {
-        setIsLoading(true);
-        try {
-          const results = await searchProducts(searchQuery);
-          dispatch(setSearchResults(results)); 
-          console.log("Current search query:", searchQuery);
-
-        } finally {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    fetchResults();
-  }, [searchQuery, dispatch]);
+    if (searchQuery && searchResults.length === 0) {
+      setIsLoading(true);
+      const timeout = setTimeout(() => setIsLoading(false), 500); 
+      return () => clearTimeout(timeout);
+    }
+  }, [searchQuery, searchResults]);
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6">
-        Search Results for "{searchQuery}"
+        <h1 className="text-2xl font-bold font-mono text-center mb-6">
+        {isLoading ? (
+          <>Searching results for "{searchQuery}"...</>
+        ) : searchResults.length > 0 ? (
+          <>Found results for "{searchQuery}"</>
+        ) : null}
       </h1>
 
       {isLoading ? (
-        <Loader />
+        <div className="text-center py-12">
+          <Loader />
+        </div>
       ) : searchResults.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+         lg:grid-cols-3 gap-10">
           {searchResults.map(product => (
-            <Sections
-              key={product.id} 
-              product={product} 
-              isEditorPick={product.source === 'editor'}
-            />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       ) : (
-        <div className="text-center py-12">
-          <p className="text-gray-500">No products found matching your search.</p>
-        </div>
+        <EmptyResults query={searchQuery} />
       )}
     </div>
   );

@@ -35,8 +35,10 @@ const LoaderSpinner = styled.div`
 `;
 
 function Loader ({ size, fullscreen, className }) {
+    return(
   <LoaderContainer fullscreen={fullscreen} className={className}>
     <LoaderSpinner size={size} />
   </LoaderContainer>
+    )
 };
 export default Loader
