@@ -62,15 +62,15 @@ function Makeup() {
         viewport={{ once: true }}
         className="mb-8"
       >
-        <h1 className="text-3xl font-bold text-gray-900 font-mono">Makeup Collection</h1>
-        <p className="text-gray-600 mt-2 font-mono">
+        <h1 className="text-2xl font-bold text-gray-900 font-mono">Makeup Collection</h1>
+        <p className="text-gray-600 text-sm mt-2 font-mono">
           Explore our premium range of makeup products
         </p>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 mt-3 font-mono border-b border-gray-500 py-5"
+          className="text-gray-600 mt-3 text-sm font-mono border-b border-gray-500 py-5"
         >
           Wearable Artistry<br />
           Pigments that rival nature's palette, textures that defy expectation. Our makeup collection is crafted for those who view their face as a canvas and application as a ceremony. Where every stroke celebrates the art of becoming.

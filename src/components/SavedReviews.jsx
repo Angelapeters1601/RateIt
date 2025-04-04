@@ -35,7 +35,7 @@ export default function SavedReviews() {
         <Link to="/productReviews" className="p-2 hover:bg-gray-100 rounded-full">
           <ArrowLeftIcon className="w-5 h-5" />
         </Link>
-        <h1 className="text-3xl font-mono font-light">Saved Reviews</h1>
+        <h1 className="text-2xl font-mono font-light">Saved Reviews</h1>
       </div>
 
       {items.length === 0 ? (
@@ -60,7 +60,7 @@ export default function SavedReviews() {
               data-aos-delay={index * 50}
             >
               <div className="flex justify-between items-start mb-2">
-                <h3 className="text-lg font-bold font-mono">{item.name}</h3>
+                <h3 className="text-sm font-bold font-mono">{item.name}</h3>
                 <button className="text-amber-500 cursor-pointer" onClick={()=>handleRemove(item.id)}>
                   <BookmarkIcon className="w-5 h-5" />
                 </button>

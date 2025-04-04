@@ -64,7 +64,7 @@ function Header() {
         <motion.div whileHover={{ scale: 1.03 }}>
           <Link 
             to="/" 
-            className="text-xl font-serif p-1 font-bold mr-auto uppercase text-gray-900"
+            className="text-xl sm:text-sm font-serif p-1 font-bold mr-auto uppercase text-gray-900"
           >
             Rate-It
           </Link>

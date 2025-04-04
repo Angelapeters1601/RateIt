@@ -77,18 +77,21 @@ function ProductCategoryDetails() {
         transition={{ delay: 0.3 }}
         className="mt-12 bg-gray-50 p-6 rounded-lg shadow-md"
       >
-        <div className="flex justify-between mb-6">
-          <h2 className="text-xl font-bold font-mono text-gray-800">Reviews</h2>
-          <button
-            onClick={() => setIsFormOpen(!isFormOpen)}
-            className="px-6 py-3 bg-black 
-            text-white font-mono rounded-lg
-             shadow-md transition-all duration-300
-              hover:bg-gray-700 focus:outline-none"
-          >
-            {isFormOpen ? "Close" : "Add Review"}
-          </button>
-        </div>
+      <div className="flex flex-col xs:flex-row justify-between items-start xs:items-center gap-4 mb-6">
+  <h2 className="text-lg sm:text-xl
+   font-bold font-mono text-gray-800 underline underline-offset-2">
+    Reviews:
+  </h2>
+  <button
+    onClick={() => setIsFormOpen(!isFormOpen)}
+    className="px-4 py-2 sm:px-6 sm:py-3 bg-black text-white 
+    font-mono rounded-lg shadow-md transition-all duration-300
+    hover:bg-gray-700 focus:outline-none text-xs sm:text-sm
+    w-full xs:w-auto text-center"
+  >
+    {isFormOpen ? "Close" : "Add Review"}
+  </button>
+</div>
 
         {isFormOpen && (
           <Fade>

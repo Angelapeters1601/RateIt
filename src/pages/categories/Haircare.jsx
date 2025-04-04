@@ -62,15 +62,15 @@ function Haircare() {
         viewport={{ once: true }}
         className="mb-8"
       >
-        <h1 className="text-3xl font-bold font-mono text-gray-900">Luxury Haircare</h1>
-        <p className="text-gray-600 mt-2 font-mono">
+        <h1 className="text-2xl font-bold font-mono text-gray-900">Luxury Haircare</h1>
+        <p className="text-gray-600 mt-2 text-sm font-mono">
           Professional products for strong and healthy hair.
         </p>
         <motion.p 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 mt-3 py-5 font-mono border-b border-gray-500 py-2"
+          className="text-gray-600 mt-3 text-sm py-5 font-mono border-b border-gray-500 py-2"
         >
           The Architecture of Luminance<br />
           From root to ritual, we engineer hair's most magnificent expressions. These are not mere products—they're the invisible couture of your crown. For hair that moves like poetry and shines with intention
@@ -105,7 +105,7 @@ function Haircare() {
               <h3 className="font-semibold text-lg mb-1 line-clamp-1">
                 {product.name}
               </h3>
-              <p className="text-gray-500 mt-3 text-sm mb-2 line-clamp-2">
+              <p className="text-gray-500 mt-3 font-mono text-sm mb-2 line-clamp-2">
                 {product.description}
               </p>
               <div className="flex justify-between items-center mt-3">

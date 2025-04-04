@@ -77,7 +77,7 @@ function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4 font-serif">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4 font-serif">
             About <span className="text-indigo-600">Rate-It</span>
           </h1>
           <motion.div
@@ -101,12 +101,12 @@ function About() {
           >
             <motion.h2 
               whileHover={{ x: 5 }}
-              className="text-2xl font-semibold text-gray-800 mb-6 font-serif"
+              className="text-lg font-semibold text-gray-800 mb-6 font-serif"
             >
               Bringing Expert Reviews to Beauty Enthusiasts
             </motion.h2>
             <motion.p 
-              className="text-gray-600 leading-relaxed font-mono"
+              className="text-gray-600 text-sm leading-relaxed font-mono"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -121,12 +121,12 @@ function About() {
           >
             <motion.h2 
               whileHover={{ x: 5 }}
-              className="text-2xl font-semibold text-gray-800 mb-6 font-serif"
+              className="text-lg font-semibold text-gray-800 mb-6 font-serif"
             >
               A Solo Project, A Developer's Vision
             </motion.h2>
             <motion.p 
-              className="text-gray-600 font-mono leading-relaxed"
+              className="text-gray-600 text-sm font-mono leading-relaxed"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -141,12 +141,12 @@ function About() {
           >
             <motion.h2 
               whileHover={{ x: 5 }}
-              className="text-2xl font-semibold text-gray-800 mb-8 font-serif text-center"
+              className="text-lg font-semibold text-gray-800 mb-8 font-serif text-center"
             >
               Technology Stack
             </motion.h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 text-lg md:grid-cols-2 lg:grid-cols-4 gap-6">
               {techStack.map((tech, index) => (
                 <motion.div
                   key={tech.category}
@@ -160,14 +160,14 @@ function About() {
                     <div className="text-2xl">
                       {tech.icon}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800">{tech.category}</h3>
+                    <h3 className="text-lg font-bold text-sm text-gray-800">{tech.category}</h3>
                   </div>
                   <ul className="space-y-3">
                     {tech.items.map((item, i) => (
                       <motion.li 
                         key={i}
                         whileHover={{ x: 5 }}
-                        className="flex items-start gap-2 text-gray-600"
+                        className="flex text-sm items-start gap-2 text-gray-600"
                       >
                         <FaCheckCircle className="text-emerald-500 mt-1 flex-shrink-0" />
                         <span>{item}</span>
@@ -185,7 +185,7 @@ function About() {
           >
             <motion.h2 
               whileHover={{ x: 5 }}
-              className="text-2xl font-semibold text-gray-800 mb-6 font-serif"
+              className="text-lg font-semibold text-gray-800 mb-6 font-serif"
             >
               Key Features & Innovations
             </motion.h2>
@@ -196,7 +196,7 @@ function About() {
               >
                 <h3 className="text-lg font-bold text-gray-800 mb-3">Curated Product Experience</h3>
                 <ul className="space-y-3 text-gray-600 font-mono">
-                  <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-2 text-sm">
                     <FaCheckCircle className="text-indigo-500 mt-1 flex-shrink-0" />
                     Research-backed product recommendations
                   </li>
@@ -216,7 +216,7 @@ function About() {
                 className="border-l-4 border-emerald-500 pl-4 py-2"
               >
                 <h3 className="text-lg font-bold text-gray-800 mb-3">Technical Excellence</h3>
-                <ul className="space-y-3 text-gray-600 font-mono">
+                <ul className="space-y-3 text-sm text-gray-600 font-mono">
                   <li className="flex items-start gap-2">
                     <FaCheckCircle className="text-emerald-500 mt-1 flex-shrink-0" />
                     Optimized performance with lazy loading
@@ -240,12 +240,12 @@ function About() {
           >
             <motion.h2 
               whileHover={{ x: 5 }}
-              className="text-2xl font-semibold text-gray-800 mb-6 font-serif text-center"
+              className="text-lg font-semibold text-gray-800 mb-6 font-serif text-center"
             >
               Why Rate-It Matters
             </motion.h2>
             <motion.p 
-              className="text-gray-600 font-mono leading-relaxed max-w-3xl mx-auto text-center"
+              className="text-gray-600 text-sm font-mono leading-relaxed max-w-3xl mx-auto text-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -260,12 +260,12 @@ function About() {
           >
             <motion.h2 
               whileHover={{ scale: 1.02 }}
-              className="text-2xl font-semibold text-gray-800 mb-6 font-serif"
+              className="text-lg font-semibold text-gray-800 mb-6 font-serif"
             >
               Explore the Project
             </motion.h2>
             <motion.p 
-              className="text-gray-600 mb-6 max-w-2xl mx-auto font-mono"
+              className="text-gray-600 mb-6 text-sm max-w-2xl mx-auto font-mono"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -291,7 +291,7 @@ function About() {
             transition={{ delay: 0.4 }}
             className="text-center mt-8"
           >
-            <p className="text-gray-600 italic font-mono">
+            <p className="text-gray-600 text-sm italic font-mono">
               Every line of code in this project was written with so much love,
                intention, and passion. I hope you do like it 😊.
             </p>

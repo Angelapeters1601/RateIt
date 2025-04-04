@@ -60,15 +60,15 @@ function Skincare() {
         viewport={{ once: true }}
         className="mb-8"
       >
-        <h1 className="text-3xl font-bold text-gray-900 font-mono">Skincare Essentials</h1>
-        <p className="text-gray-600 mt-2 font-mono">
+        <h1 className="text-2xl font-bold text-gray-900 font-mono">Skincare Essentials</h1>
+        <p className="text-gray-600 text-sm mt-2 font-mono">
           Dermatologist-approved products for your skincare routine.
         </p>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 font-mono border-b border-gray-500 py-5 mt-3"
+          className="text-gray-600 text-sm font-mono border-b border-gray-500 py-5 mt-3"
         >
           The Alchemy of Radiance<br />
           Where science meets serenity in sacred self-care rituals. Our skincare is a symphony of clinical precision and botanical intelligence—each formulation a love letter to your skin's potential. This is not maintenance; it's transformation bottled.
@@ -103,7 +103,7 @@ function Skincare() {
               <h3 className="font-semibold text-lg mb-1 line-clamp-1">
                 {product.name}
               </h3>
-              <p className="text-gray-500 text-sm mb-2 line-clamp-2">
+              <p className="text-gray-500 font-mono text-sm mb-2 line-clamp-2">
                 {product.description}
               </p>
               <div className="flex justify-between items-center mt-3">

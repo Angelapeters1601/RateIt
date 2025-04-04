@@ -16,42 +16,43 @@ function Home() {
             className="w-full h-[500px] object-cover"
           />
         </Fade>
-
         <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
-          <div className="text-center max-w-3xl">
-            <Fade direction="down" duration={1000} triggerOnce>
-              <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-                Discover <span className="text-primary-300 font-mono">Beauty</span> Worth Loving
-              </h1>
-            </Fade>
-            
-            <Fade direction="down" duration={1000} delay={200} triggerOnce>
-              <p className="text-xl text-white/90 mb-8 font-mono">
-                Expert-curated reviews you can trust
-              </p>
-            </Fade>
-            
-            <Fade direction="up" duration={1000} delay={400} triggerOnce>
-              <div className="flex gap-4 justify-center items-center">
-                <button className="bg-stone-900 hover:bg-gray-900 text-white py-2 md:py-3 px-6 md:px-8 rounded-md text-base md:text-lg font-medium font-mono flex items-center transition-transform hover:scale-105">
-                  Browse Products <span className="ml-3 md:ml-5 mr-1">and</span>
-                </button>
-                <button className="bg-white hover:bg-gray-100 text-gray-900 py-2 md:py-3 px-6 md:px-8 rounded-md text-base md:text-lg font-medium border border-white font-mono transition-transform hover:scale-105">
-                  Share Your Review
-                </button>
-              </div>
-            </Fade>
-          </div>
+  <div className="text-center max-w-3xl w-full px-2 sm:px-4">
+    <Fade direction="down" duration={1000} triggerOnce>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-3 sm:mb-4">
+        Discover <span className="text-primary-300 font-mono">Beauty</span> Worth Loving
+      </h1>
+    </Fade>
+    
+    <Fade direction="down" duration={1000} delay={200} triggerOnce>
+      <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 font-mono px-2 sm:px-0">
+        Expert-curated reviews you can trust
+      </p>
+    </Fade>
+    
+    <Fade direction="up" duration={1000} delay={400} triggerOnce>
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <button className="w-full sm:w-auto bg-stone-900 hover:bg-gray-900 text-white py-2 sm:py-2 md:py-3 px-4 sm:px-6 md:px-8 rounded-md text-sm sm:text-base md:text-lg font-medium font-mono flex items-center justify-center transition-transform hover:scale-105">
+          Browse Products 
+          <span className="ml-2 sm:ml-3 md:ml-5 mr-1 hidden sm:inline">and</span>
+        </button>
+        
+        <button className="w-full sm:w-auto bg-white hover:bg-gray-100 text-gray-900 py-2 sm:py-2 md:py-3 px-4 sm:px-6 md:px-8 rounded-md text-sm sm:text-base md:text-lg font-medium border border-white font-mono transition-transform hover:scale-105">
+          Share Your Review
+        </button>
+      </div>
+    </Fade>
+  </div>
         </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 py-16 bg-gray-200">
         <Zoom duration={1000} triggerOnce>
           <div className="text-center mb-16">
-            <h2 className="text-2xl font-serif font-medium text-gray-900 mb-4">
+            <h2 className="text-lg font-serif font-medium text-gray-900 mb-4">
               Why Trust Our Reviews?
             </h2>
-            <p className="text-gray-600 font-mono tracking-wide max-w-2xl mx-auto mb-4">
+            <p className="text-gray-600 text-sm font-mono tracking-wide max-w-2xl mx-auto mb-4">
               Rigorous testing methodology meets real-world user experiences for the most comprehensive beauty insights.
             </p>
             <ReviewCounter 
@@ -68,10 +69,10 @@ function Home() {
         <Slide direction="up" duration={800} triggerOnce>
           <section className="py-16">
             <div className="max-w-4xl mx-auto px-6 text-center">
-              <h2 className="text-2xl font-serif font-medium text-gray-900 mb-6">
+              <h2 className="text-lg font-serif font-medium text-gray-900 mb-6">
                 Our Mission
               </h2>
-              <p className="text-gray-600 font-mono leading-relaxed">
+              <p className="text-gray-600 text-sm font-mono leading-relaxed">
                 To empower beauty consumers with transparent, science-backed product reviews 
                 that cut through marketing hype. We combine clinical expertise with real-user 
                 experiences to help you make informed decisions about what truly works for 
@@ -88,7 +89,7 @@ function Home() {
                 <CheckBadgeIcon className="h-8 w-8 text-primary-600" />
               </div>
               <h3 className="text-xl font-serif font-semibold text-gray-900 mb-3">Expert Verified</h3>
-              <p className="text-gray-600 font-mono">
+              <p className="text-gray-600 font-mono text-sm">
                 Our board-certified dermatologists evaluate every product against clinical standards.
               </p>
             </div>
@@ -100,7 +101,7 @@ function Home() {
                 <StarIcon className="h-8 w-8 text-secondary-600" />
               </div>
               <h3 className="text-xl font-serif font-semibold text-gray-900 mb-3">Real Results</h3>
-              <p className="text-gray-600 font-mono">
+              <p className="text-gray-600 font-mono text-sm">
                 Products undergo 28+ days of controlled testing with biometric analysis.
               </p>
             </div>
@@ -112,7 +113,7 @@ function Home() {
                 <ChatBubbleLeftEllipsisIcon className="h-8 w-8 text-amber-600" />
               </div>
               <h3 className="text-xl font-serif font-semibold text-gray-900 mb-3">Community Driven</h3>
-              <p className="text-gray-600 font-mono">
+              <p className="text-gray-600 font-mono text-sm">
                 Verified reviewer network includes diverse skin types and ethnicities.
               </p>
             </div>

@@ -50,11 +50,11 @@ function EmptyResults({ query }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7, duration: 0.5 }}
       >
-        <p className="text-gray-500 mb-6 font-mono">
+        <p className="text-gray-500 text-sm mb-6 font-mono">
           Try different keywords or check our suggestions:
         </p>
         
-        <div className="flex flex-wrap justify-center gap-3 font-mono max-w-xs mx-auto">
+        <div className="flex flex-wrap justify-center gap-3 text-sm font-mono max-w-xs mx-auto">
           {['skincare', 'makeup', 'fragrance', 'haircare'].map((term) => (
             <motion.span
               key={term}

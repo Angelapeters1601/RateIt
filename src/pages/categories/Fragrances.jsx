@@ -62,11 +62,11 @@ function Fragrances() {
         viewport={{ once: true }}
         className="mb-8"
       >
-        <h1 className="text-3xl font-bold font-mono py-2 text-gray-900">Luxury Fragrances</h1>
-        <p className="text-gray-600 mt-2 font-mono py-2">
+        <h1 className="text-2xl font-bold font-mono py-2 text-gray-900">Luxury Fragrances</h1>
+        <p className="text-gray-600 mt-2 font-mono font-lg py-2">
           Indulge in premium scents and perfumes.
         </p>
-        <p className="text-gray-600 mt-2 font-mono border-b border-gray-500
+        <p className="text-gray-600 mt-2 text-sm font-mono border-b border-gray-500
          py-5">Experience the Essence of Opulence
             Where rare ingredients meet 
             masterful perfumery in a symphony of scent.

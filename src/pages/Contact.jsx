@@ -152,7 +152,7 @@ function ContactUs() {
         >
           <Button
             type="primary"
-            className="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-opacity-90 transition"
+            className="w-full bg-primary text-white font-bold py-4 rounded-lg hover:bg-opacity-90 transition"
           >
             Send Message
           </Button>
