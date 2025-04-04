@@ -1,4 +1,3 @@
-// components/ui/SearchResultsPreview.js
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 import Sections from './Sections';

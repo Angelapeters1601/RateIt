@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Fade, Slide } from "react-reveal";
-import { motion } from "framer-motion";  // Import motion from framer-motion
+import { Fade, Slide } from "react-awesome-reveal";
+import { motion } from "framer-motion"; 
 
 function Sections({ data, title }) {
     return (
@@ -22,7 +22,7 @@ function Sections({ data, title }) {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
                 {data.map((product) => (
-                    <Fade bottom delay={400} key={product.id}>
+                    <Fade bottom delay={500} key={product.id}>
                         <motion.div
                             whileHover={{ y: -5 }}
                             transition={{ type: "spring", stiffness: 300 }}
