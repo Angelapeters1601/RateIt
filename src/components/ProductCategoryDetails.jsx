@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Fade from 'react-reveal/Fade';
+import {Fade} from 'react-awesome-reveal';
 import useFetchProducts from "../hooks/useFetchProducts";
 import RatingStars from '../ui/RatingStars';
 import ReviewForm from '../pages/ReviewForm';

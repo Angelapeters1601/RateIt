@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { useLocation } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { BookmarkIcon as BookmarkSolid } from "@heroicons/react/24/solid";

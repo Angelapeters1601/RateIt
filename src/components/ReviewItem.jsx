@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { reviewUpdated, reviewDeleted, toggleEdit } from '../features/reviews/newReviewSlice';
 import RatingStars from '../ui/RatingStars';
-import { Fade } from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 
 function ReviewItem({ review }) {
