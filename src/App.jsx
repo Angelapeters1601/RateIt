@@ -45,7 +45,6 @@ function App() {
             <Route path="makeup" element={<Makeup />} />
             <Route path="fragrances" element={<Fragrances />} />
           </Route>
-          <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
