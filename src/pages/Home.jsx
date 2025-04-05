@@ -24,7 +24,7 @@ function Home() {
     <Fade direction="down" duration={1000} triggerOnce>
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-3 sm:mb-4">
         Discover <span className="text-primary-300 font-mono">Beauty</span>
-         Worth Loving
+           {" "}Worth Loving
       </h1>
     </Fade>
     
@@ -35,8 +35,7 @@ function Home() {
     </Fade>
     
     <Fade direction="up" duration={1000} delay={400} triggerOnce>
-
-<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-3">
   <motion.div
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.98 }}
@@ -46,13 +45,18 @@ function Home() {
       damping: 15,
       duration: 0.2 
     }}
-    className="w-full sm:w-auto"
+    className="w-full max-w-[320px] sm:w-auto"
   >
     <Link
       to="/productReviews"
-      className="bg-stone-900 hover:bg-gray-900 text-white py-2 sm:py-2 md:py-3 px-4 sm:px-6 md:px-8 rounded-md text-sm sm:text-base md:text-lg font-medium font-mono flex items-center justify-center"
+      className="bg-stone-900 hover:bg-gray-900 
+      text-white py-2 px-4 rounded-md 
+      text-sm font-medium font-mono 
+      flex items-center justify-center text-center"
     >
-      See Expert's Reviews on Products
+      <span className="line-clamp-2 leading-snug">
+        See Expert's Reviews on Products
+      </span>
       <motion.div
         initial={{ x: 0 }}
         whileHover={{ x: 3 }}
@@ -63,9 +67,8 @@ function Home() {
     </Link>
   </motion.div>
 </div>
-
     </Fade>
-  </div>
+    </div>
         </div>
       </section>
 

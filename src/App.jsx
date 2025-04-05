@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
 import { PageSkeleton } from './ui/PageSkeleton';
-import ScrollToTop from './helpers/scrollToTop';
+import ScrollToTop from './components/ScrollToTop';
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
