@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { StarIcon } from "@heroicons/react/20/solid";
 
 const featuredReviews = [
   {
@@ -48,6 +49,18 @@ const NotFound = () => {
   const [isHovered, setIsHovered] = useState(false);
   const carouselRef = useRef(null);
   const intervalRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const isDirectAccess = !location.state?.fromRedirect;
+    if (isDirectAccess && window.location.pathname !== '/404') {
+      navigate('/404', { 
+        state: { fromRedirect: true },
+        replace: true 
+      });
+    }
+  }, [navigate, location]);
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -84,9 +97,7 @@ const NotFound = () => {
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => 
-      (prev + 1) % featuredReviews.length
-    );
+    setActiveIndex((prev) => (prev + 1) % featuredReviews.length);
     resetInterval();
   };
 
@@ -104,39 +115,47 @@ const NotFound = () => {
       <div className="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
         <div className="bg-indigo-600 text-white p-8 text-center">
           <h1 className="text-6xl font-bold">404</h1>
-          <p className="text-gray-200 mb-6 py-2 text-sm">
-                The page you requested seems to have vanished into the void. Don't worry,
-               we'll help you find your way back 😊
-            </p>
-         
+          <p className="text-indigo-100 mb-6 py-2 text-lg">
+            The page you requested seems to have vanished into the void. Don't worry,
+            we'll help you find your way back.
+          </p>
         </div>
 
         <div className="p-8">
           <div className="md:flex gap-8">
             <div className="md:w-1/2 mb-8 md:mb-0">
-             
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
-                <p className="text-blue-700 font-medium">Possible reasons:</p>
-                <ul className="list-disc list-inside text-sm text-blue-700 mt-2 space-y-1">
-                  <li>The page may have been removed</li>
-                   <li>You mistyped the URL</li>
-                   <li>We might have made a mistake</li>
-                 </ul>
-               </div>
-               <h2 className="text-l font-bold text-gray-800 mb-4">
-                Let's find you something great instead!
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                Oops! Looks like you're lost.
               </h2>
-            
-              <Link
-                to="/"
-                className="inline-flex items-center justify-center w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
-              >
-                ← Return Home
-              </Link>
+              
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-lg">
+                <p className="text-blue-700 font-medium">Possible reasons:</p>
+                <ul className="list-disc list-inside text-blue-700 mt-2 space-y-1">
+                  <li>The page may have been moved or removed</li>
+                  <li>You might have mistyped the URL</li>
+                  <li>We could have made a mistake (we're human too!)</li>
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <Link
+                  to="/"
+                  className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                >
+                  ← Return to Homepage
+                </Link>
+                <Link
+                  to="/search"
+                  className="inline-flex items-center justify-center w-full border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium py-3 px-6 rounded-lg transition-colors"
+                >
+                  🔍 Try our Search
+                </Link>
+              </div>
             </div>
+
             <div className="md:w-1/2">
-              <h3 className="text-l font-semibold text-gray-800 mb-4 flex items-center">
-                <span className="w-5 h-5 mr-2">🏆</span>Want to Check Our Editor's Top Picks ?
+              <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <span className="mr-2">🌟</span> Editor's Top Picks
               </h3>
               
               <div 
@@ -173,36 +192,34 @@ const NotFound = () => {
                     >
                       <Link
                         to={review.url}
-                        className="block border rounded-xl p-4 hover:shadow-md transition-all duration-300 h-full"
+                        className="block border rounded-xl p-4 hover:shadow-md transition-all duration-300 h-full bg-white"
                       >
-                        <div className="relative">
+                        <div className="relative h-48 overflow-hidden rounded-lg mb-3">
                           <img
                             src={review.image}
                             alt={review.name}
-                            className="w-full h-48 object-cover mb-3 rounded-lg bg-gray-100"
+                            className="w-full h-full object-cover"
                           />
                           {review.expertVerified && (
                             <span className="absolute top-2 left-2 bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">
                               Expert Verified
                             </span>
                           )}
-                          <div className="absolute bottom-2 right-2 bg-white/90 px-2 py-1 rounded text-sm font-medium">
+                          <div className="absolute bottom-2 right-2 bg-white/90 px-2 py-1 rounded text-sm font-medium shadow-sm">
                             {review.price}
                           </div>
                         </div>
                         <div className="flex items-center mb-2">
                           <div className="flex">
                             {[...Array(5)].map((_, i) => (
-                              <svg
+                              <StarIcon
                                 key={i}
                                 className={`w-4 h-4 ${
-                                  i < Math.floor(review.rating) ? 'text-yellow-400' : 'text-gray-300'
+                                  i < Math.floor(review.rating) 
+                                    ? 'text-yellow-400' 
+                                    : 'text-gray-300'
                                 }`}
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                              >
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                              </svg>
+                              />
                             ))}
                           </div>
                           <span className="ml-1 text-sm text-gray-600">
@@ -222,11 +239,13 @@ const NotFound = () => {
                   {featuredReviews.map((_, index) => (
                     <button
                       key={index}
-                      aria-label={`Go to slide ${index + 1}`}
-                      className={`w-2.5 h-2.5 rounded-full transition-all ${
-                        index === activeIndex ? "bg-indigo-600 w-6" : "bg-gray-300"
-                      }`}
                       onClick={() => setActiveIndex(index)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all ${
+                        index === activeIndex 
+                          ? "bg-indigo-600 w-6" 
+                          : "bg-gray-300"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
                 </div>
@@ -234,12 +253,12 @@ const NotFound = () => {
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <p className="text-sm text-gray-500">
-              Still stuck? Try our <Link to="/search" 
-              className="text-indigo-600 hover:underline">search</Link> or 
-              contact <Link to="/contact" 
-              className="text-indigo-600 hover:underline">our editorial team</Link>.
+          <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+            <p className="text-gray-500">
+              Still need help?{" "}
+              <Link to="/contact" className="text-indigo-600 hover:underline font-medium">
+                Contact our support team
+              </Link>
             </p>
           </div>
         </div>

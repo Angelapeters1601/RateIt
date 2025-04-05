@@ -25,7 +25,7 @@ function App() {
   return (
     <>
     <Suspense fallback={<PageSkeleton />}>
-        <ScrollToTop />
+    <ScrollToTop />
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
@@ -45,6 +45,7 @@ function App() {
             <Route path="makeup" element={<Makeup />} />
             <Route path="fragrances" element={<Fragrances />} />
           </Route>
+          <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
