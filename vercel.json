@@ -7,6 +7,12 @@
     },
     "routes": [
       {
+        "src": "/assets/(.*)",
+        "headers": {
+          "Content-Type": "application/javascript"
+        }
+      },
+      {
         "src": "/404",
         "dest": "/404.html",
         "status": 404
@@ -15,6 +21,17 @@
         "src": "/(.*)",
         "dest": "/index.html",
         "status": 200
+      }
+    ],
+    "headers": [
+      {
+        "source": "/assets/(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
       }
     ]
   }
