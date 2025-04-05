@@ -1,8 +1,11 @@
-import { StarIcon, ChatBubbleLeftEllipsisIcon, CheckBadgeIcon } from "@heroicons/react/24/solid";
+import { StarIcon, ChatBubbleLeftEllipsisIcon, CheckBadgeIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import heroImage from "../assets/img2.jpg";
 import { Fade, Zoom, Slide } from 'react-awesome-reveal';
 import HomeCarousel from "../ui/HomeCarousel";
 import ReviewCounter from "../ui/ReviewCounter";
+import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+
 
 function Home() {
   return (
@@ -20,27 +23,47 @@ function Home() {
   <div className="text-center max-w-3xl w-full px-2 sm:px-4">
     <Fade direction="down" duration={1000} triggerOnce>
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-3 sm:mb-4">
-        Discover <span className="text-primary-300 font-mono">Beauty</span> Worth Loving
+        Discover <span className="text-primary-300 font-mono">Beauty</span>
+         Worth Loving
       </h1>
     </Fade>
     
     <Fade direction="down" duration={1000} delay={200} triggerOnce>
       <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 font-mono px-2 sm:px-0">
-        Expert-curated reviews you can trust
+        Expert-curated reviews you can trust!
       </p>
     </Fade>
     
     <Fade direction="up" duration={1000} delay={400} triggerOnce>
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-        <button className="w-full sm:w-auto bg-stone-900 hover:bg-gray-900 text-white py-2 sm:py-2 md:py-3 px-4 sm:px-6 md:px-8 rounded-md text-sm sm:text-base md:text-lg font-medium font-mono flex items-center justify-center transition-transform hover:scale-105">
-          Browse Products 
-          <span className="ml-2 sm:ml-3 md:ml-5 mr-1 hidden sm:inline">and</span>
-        </button>
-        
-        <button className="w-full sm:w-auto bg-white hover:bg-gray-100 text-gray-900 py-2 sm:py-2 md:py-3 px-4 sm:px-6 md:px-8 rounded-md text-sm sm:text-base md:text-lg font-medium border border-white font-mono transition-transform hover:scale-105">
-          Share Your Review
-        </button>
-      </div>
+
+<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.98 }}
+    transition={{ 
+      type: "spring", 
+      stiffness: 400, 
+      damping: 15,
+      duration: 0.2 
+    }}
+    className="w-full sm:w-auto"
+  >
+    <Link
+      to="/productReviews"
+      className="bg-stone-900 hover:bg-gray-900 text-white py-2 sm:py-2 md:py-3 px-4 sm:px-6 md:px-8 rounded-md text-sm sm:text-base md:text-lg font-medium font-mono flex items-center justify-center"
+    >
+      See Expert's Reviews on Products
+      <motion.div
+        initial={{ x: 0 }}
+        whileHover={{ x: 3 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <ChevronRightIcon className="ml-2 h-5 w-5" />
+      </motion.div>
+    </Link>
+  </motion.div>
+</div>
+
     </Fade>
   </div>
         </div>
