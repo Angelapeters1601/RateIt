@@ -1,8 +1,9 @@
+import "./App.css";
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
-import "./App.css";
 import { PageSkeleton } from './ui/PageSkeleton';
+import ScrollToTop from './helpers/scrollToTop';
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -22,7 +23,9 @@ const SearchResultsPage = lazy(() => import("./components/SearchResultsPage"));
 
 function App() {
   return (
+    <>
     <Suspense fallback={<PageSkeleton />}>
+        <ScrollToTop />
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
@@ -46,6 +49,7 @@ function App() {
         </Route>
       </Routes>
     </Suspense>
+    </>
   );
 }
 
