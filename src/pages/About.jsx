@@ -195,8 +195,8 @@ function About() {
                 className="border-l-4 border-indigo-500 pl-4 py-2"
               >
                 <h3 className="text-lg font-bold text-gray-800 mb-3">Curated Product Experience</h3>
-                <ul className="space-y-3 text-gray-600 font-mono">
-                  <li className="flex items-start gap-2 text-sm">
+                <ul className="space-y-3 text-gray-600 text-sm font-mono">
+                  <li className="flex items-start gap-2">
                     <FaCheckCircle className="text-indigo-500 mt-1 flex-shrink-0" />
                     Research-backed product recommendations
                   </li>

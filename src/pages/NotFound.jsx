@@ -118,7 +118,7 @@ const NotFound = () => {
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
                 <p className="text-blue-700 font-medium">Possible reasons:</p>
                 <ul className="list-disc list-inside text-sm text-blue-700 mt-2 space-y-1">
-                  <li>The page may have moved</li>
+                  <li>The page may have been removed</li>
                    <li>You mistyped the URL</li>
                    <li>We might have made a mistake</li>
                  </ul>

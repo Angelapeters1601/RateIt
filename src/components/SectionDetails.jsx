@@ -6,6 +6,7 @@ import { BookmarkIcon as BookmarkSolid } from "@heroicons/react/24/solid";
 import { BookmarkIcon as BookmarkOutline } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from 'react-redux';
 import { addReview, removeReview } from "../features/reviews/savedReviewsSlice";
+import { Link } from 'react-router-dom';
 
 function SectionDetails() {
     const location = useLocation();
@@ -55,7 +56,9 @@ function SectionDetails() {
                 <nav className="flex text-xs text-gray-500 mb-8 tracking-wider">
                     <a href="/" className="hover:text-gray-700">HOME</a>
                     <span className="mx-2">/</span>
-                    <a href={`/categories/${product.category}`} className="hover:text-gray-700">{product.category.toUpperCase()}</a>
+                    <Link to={`/categories/${product.category}`} className="hover:text-gray-700">
+                    {product.category.toUpperCase()}
+                    </Link>
                     <span className="mx-2">/</span>
                     <span className="text-gray-700">{product.name.toUpperCase()}</span>
                 </nav>
