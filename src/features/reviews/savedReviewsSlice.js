@@ -1,4 +1,3 @@
-// features/savedReviews/savedReviewsSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

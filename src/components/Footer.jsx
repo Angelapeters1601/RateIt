@@ -78,7 +78,7 @@ const Footer = () => {
             <motion.div
               key={index}
               whileHover={{ y: -2 }}
-              className="px-1 sm:px-0" // Add small horizontal padding on mobile
+              className="px-1 sm:px-0" 
             >
               <Link 
                 to={link.to} 

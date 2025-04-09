@@ -83,7 +83,6 @@ function Home() {
             </p>
             <ReviewCounter 
               targetCount={1500} 
-              suffixClassName="text-2xl font-normal text-gray-600"
             />
           </div>
         </Zoom>

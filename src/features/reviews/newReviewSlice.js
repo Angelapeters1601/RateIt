@@ -10,7 +10,6 @@ const loadReviews = () => {
 };
 
 const initialState = {
-    // userReviews: loadFromLocalStorage(),
   userReviews: loadReviews(),
   status: 'idle',
   error: null
@@ -43,6 +42,7 @@ const newReviewSlice = createSlice({
     reviewUpdated: {
       reducer(state, action) {
         const index = state.userReviews.findIndex(r => r.id === action.payload.id);
+        // if found update the review in userReviews
         if (index !== -1) {
           state.userReviews[index] = action.payload;
           localStorage.setItem('userReviews', JSON.stringify(state.userReviews));

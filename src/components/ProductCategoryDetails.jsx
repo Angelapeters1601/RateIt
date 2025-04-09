@@ -11,8 +11,8 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 
 function ProductCategoryDetails() {
-    const navigate = useNavigate();
-  const { state } = useLocation();
+  const navigate = useNavigate();
+  const { state } = useLocation(); //from ProductCateoryPage.jsx
   const { productId } = useParams();
   const { data } = useFetchProducts();
   const [isFormOpen, setIsFormOpen] = useState(false);

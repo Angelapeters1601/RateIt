@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 function SectionDetails() {
     const location = useLocation();
     const dispatch = useDispatch();
-    const product = location.state?.product || allProducts.find(p => p.id === numericId);
+    const product = location.state?.product ;     // from Sections.jsx Link
     const { items } = useSelector(state => state.savedReviews);
     const isSaved = items.some(item => item.id === product.id);
   
@@ -102,7 +102,8 @@ function SectionDetails() {
                     <Fade cascade duration={500} delay={200}>
                         <div className="border-b border-gray-200 pb-6 mb-6">
                             <h1 className="text-3xl font-light font-mono tracking-wide text-gray-900 mb-2">{product.name}</h1>
-                            <p className="text-gray-500 font-serif text-sm tracking-wider">{product.brand || 'LUXURY BRAND'}</p>
+                            <p className="text-gray-500 font-serif text-sm tracking-wider">
+                                {product.brand || 'LUXURY BRAND'}</p>
                         </div>
                         
                         <div className="flex items-center mb-8">

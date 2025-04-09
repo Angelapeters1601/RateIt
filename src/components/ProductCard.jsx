@@ -59,7 +59,7 @@ function ProductCard({ product }) {
               animate={{ scale: 1 }}
               exit={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 300 }}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()} //ensures clicks on the modal content do not close the modal
             >
               <button
                 className="absolute top-4 right-4 z-10 p-2 rounded-full hover:bg-gray-100 transition-colors"

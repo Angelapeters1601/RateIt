@@ -73,12 +73,6 @@ function Sections({ data, title }) {
                                             <span className="text-lg font-serif font-semibold text-gray-900">
                                                 ${product.price.toFixed(2)}
                                             </span>
-                                            <button
-                                                className="text-sm bg-primary-600 hover:bg-primary-700 text-white px-3 py-1 rounded transition-colors"
-                                                onClick={(e) => e.preventDefault()}
-                                            >
-                                                Quick View
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
