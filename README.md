@@ -35,6 +35,9 @@ Swiper.js & Slick – For product sliders
 React Lazy Loading – Performance optimization
 Error Boundaries & Handling – Fallback UIs for robust error management.
 
+🌐 Live Demo  
+Check it out live: 👉 [rate-it-one.vercel.app](https://rate-it-one.vercel.app)
+
 Installation Instructions:
 Prerequisites:
 Node.js (preferably the latest LTS version)
@@ -62,6 +65,9 @@ Contact:
 For questions, feedback, or collaboration:
 Email: angelnwattah@gmail.com
 Alt Email: nwattaha@gmail.com
+LinkedIn:[linkedin.com/in/nwattah-angela](https://linkedin.com/in/nwattah-angela)  
+Twitter: [@mavoolumma](https://twitter.com/mavoolumma)
+
 
 My Love Note:
 Every line of code in this project was written with love, care, and passion. RATE-IT is more than just a project it’s a piece of my heart, built for beauty lovers everywhere. I hope you enjoy exploring it as much as I loved creating it.
